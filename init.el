@@ -32,8 +32,8 @@
 ;;; Code:
 
 ;; User Info
-(setq user-full-name "Gregory Stein")
-(setq user-mail-address "gregory.j.stein@gmail.com")
+(setq user-full-name "Jianbin Qin")
+(setq user-mail-address "qinbill@gmail.com")
 
 ;; Install use-package if necessary
 (require 'package)
