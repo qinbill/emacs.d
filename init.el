@@ -93,3 +93,5 @@
 ;; === misc ===
 (load-file "~/.emacs.d/config/init-70-misc-ledger.el")
 
+(setq ispell-program-name "aspell")
+

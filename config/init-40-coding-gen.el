@@ -77,7 +77,7 @@
     :config
     (helm-projectile-on)
     (general-define-key
-     :prefix gjs-leader-key
+;     :prefix gjs-leader-key
      :states '(normal motion)
      ;; Ensure (leader p) maps to the projectile bindings
      "p" '(:keymap projectile-command-map :which-key "Projectile")

@@ -48,7 +48,6 @@
 
   (general-define-key
    :keymaps 'LaTeX-mode-map
-   :prefix (concat gjs-leader-key "c")
    :states '(normal visual)
    "c" 'TeX-command-master
    "v" 'TeX-view
