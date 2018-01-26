@@ -40,29 +40,32 @@
 ;;		(load-theme 'monokai))))
   )
 
-;; Solarized
-(use-package color-theme :ensure t)
-(use-package color-theme-solarized
-  :ensure t
-  :init
-  (set-frame-parameter nil 'background-mode 'dark)
-  ; (load-theme 'solarized t)
-  (defun gjstein-swap-theme-light-dark ()
-    "Swaps between solarized light and dark"
-    (interactive)
-    (load-theme 'solarized)
-    (if (eq 'light (frame-parameter nil 'background-mode))
-	(set-frame-parameter nil 'background-mode 'dark)
-      (set-frame-parameter nil 'background-mode 'light)
-      )
-    (enable-theme 'solarized)
-    )
-  )
+(set-face-attribute 'default nil :height 200)
 
-;; I prefer using a smaller font size than the default (and 'Monaco')
-(if (eq system-type 'darwin)
-    (custom-set-faces '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "nil" :family "Iosevka Light")))))
-  (custom-set-faces '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "nil" :family "Ubuntu Mono"))))))
+;; Solarized
+; (use-package color-theme :ensure t)
+; (use-package color-theme-solarized
+;   :ensure t
+;   :init
+;   (set-frame-parameter nil 'background-mode 'dark)
+;   ; (load-theme 'solarized t)
+;   (defun gjstein-swap-theme-light-dark ()
+;     "Swaps between solarized light and dark"
+;     (interactive)
+;     (load-theme 'solarized)
+;     (if (eq 'light (frame-parameter nil 'background-mode))
+; 	(set-frame-parameter nil 'background-mode 'dark)
+;       (set-frame-parameter nil 'background-mode 'light)
+;       )
+;     (enable-theme 'solarized)
+;     )
+;   )
+
+; I prefer using a smaller font size than the default (and 'Monaco')
+; (if (eq system-type 'darwin)
+;     (custom-set-faces '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 200 :width normal :foundry "nil" :family "Iosevka Light")))))
+;   (custom-set-faces '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 220 :width normal :foundry "nil" :family "Ubuntu Mono"))))))
+
 
 ;; Set default fill column
 (setq-default fill-column 80)
@@ -82,12 +85,12 @@
 ;; initial window
 (setq initial-frame-alist
       '((width . 102)   ; characters in a line
-        (height . 54))) ; number of lines
+        (height . 80))) ; number of lines
 
 ;; sebsequent frame
 (setq default-frame-alist
       '((width . 100)   ; characters in a line
-        (height . 52))) ; number of lines
+        (height . 80))) ; number of lines
 
 ;; Diminish extraneous info in the modeline
 (diminish 'abbrev-mode)
@@ -199,6 +202,9 @@
 (rename-major-mode "shell" shell-mode "σ")
 (rename-major-mode "org" org-mode "ω")
 (rename-major-mode "Web" web-mode "w")
+
+
+
 
 (add-hook 'web-mode-hook (lambda() (setq mode-name "w")))
 (add-hook 'emacs-lisp-mode-hook (lambda() (setq mode-name "ελ")))

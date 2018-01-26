@@ -21,29 +21,29 @@
 
 ;; === Code Completion ===
 
-;; == company-mode ==
-(use-package company
-  :ensure t
-  :defer t
-  :after
-  :diminish company-mode
-  :init (add-hook 'after-init-hook 'global-company-mode)
-  (general-define-key
-   :keymaps 'company-active-map
-   "C-j" 'company-select-next
-   "C-k" 'company-select-previous
-   "C-l" 'company-complete-selection)
+; ;; == company-mode ==
+; (use-package company
+;   :ensure t
+;   :defer t
+;   :after
+;   :diminish company-mode
+;   :init (add-hook 'after-init-hook 'global-company-mode)
+;   (general-define-key
+;    :keymaps 'company-active-map
+;    "C-j" 'company-select-next
+;    "C-k" 'company-select-previous
+;    "C-l" 'company-complete-selection)
 
-  :config
-  (use-package company-irony :ensure t :defer t)
-  (setq company-idle-delay              nil
-	company-minimum-prefix-length   2
-	company-show-numbers            t
-	company-tooltip-limit           20
-	company-dabbrev-downcase        nil
-	)
-  (define-key evil-insert-state-map (kbd "C-f") 'company-complete-common)
-  )
+;   :config
+;   (use-package company-irony :ensure t :defer t)
+;   (setq company-idle-delay              nil
+; 	company-minimum-prefix-length   2
+; 	company-show-numbers            t
+; 	company-tooltip-limit           20
+; 	company-dabbrev-downcase        nil
+; 	)
+;   (define-key evil-insert-state-map (kbd "C-f") 'company-complete-common)
+;   )
 
 ;; === Tools ===
 
@@ -118,14 +118,14 @@
             (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)))
 
 
-;; == evil + vimish-fold ==
-(use-package evil-vimish-fold
-  :ensure t
-  :defer t
-  :init
-  (evil-vimish-fold-mode 1)
-  :diminish evil-vimish-fold-mode
-  )
+; ;; == evil + vimish-fold ==
+; (use-package evil-vimish-fold
+;   :ensure t
+;   :defer t
+;   :init
+;   (evil-vimish-fold-mode 1)
+;   :diminish evil-vimish-fold-mode
+;   )
 
 ;; == magit ==
 (use-package magit
