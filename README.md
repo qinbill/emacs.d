@@ -1,3 +1,5 @@
-# GJStein Emacs Configuration Files
+# Jianbin Emacs Configuration Files
 
-Details to follow.
+Modified from https://github.com/gjstein/emacs.d
+
+Fixed the bug that it dose not work with old version emacs that MacOS come with. 
