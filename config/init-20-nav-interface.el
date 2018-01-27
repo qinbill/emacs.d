@@ -53,48 +53,46 @@
 ;   (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 ;   )
 
-; (use-package general
-;   :ensure t
-;   :after evil
-;   :init
-;   (defvar gjs-leader-key "<SPC>")
+(use-package general
+  :ensure t
+  :init
+  (defvar gjs-leader-key "<SPC>")
 
-;   (defun gjstein-org-agenda ()
-;     "Open my custom agenda"
-;     (interactive)
-;     (org-agenda 0 " "))
-;   (defun gjstein-org-weekly-agenda ()
-;     "Open my custom agenda"
-;     (interactive)
-;     (org-agenda 0 "a"))
+  (defun gjstein-org-agenda ()
+    "Open my custom agenda"
+    (interactive)
+    (org-agenda 0 " "))
+  (defun gjstein-org-weekly-agenda ()
+    "Open my custom agenda"
+    (interactive)
+    (org-agenda 0 "a"))
 
-;   (defun gjstein-open-ledger ()
-;     "Open my ledger file"
-;     (interactive)
-;     (find-file "~/ledger/main.ledger")
-;     (evil-goto-line)
-;     )
+  (defun gjstein-open-ledger ()
+    "Open my ledger file"
+    (interactive)
+    (find-file "~/ledger/main.ledger")
+    (evil-goto-line)
+    )
 
-;   ;; Global general keybindings
-;   (general-evil-setup)
-;   (general-define-key
-;    :prefix gjs-leader-key
-;    :states '(normal motion)
-;    ;; I want these everywhere
-;    "a" '(gjstein-org-agenda :which-key "agenda")
-;    "A" '(gjstein-org-weekly-agenda :which-key "weekly agenda")
-;    "g" '(magit-status :which-key "git")
-;    ;; org-mode keys
-;    ;;"c" '(:ignore t :which-key "Org Keys")
-;    "q" '(org-capture :which-key "Capture")
-;    "l" '(gjstein-open-ledger :which-key "Ledger")
-;    gjs-leader-key '(helm-M-x :which-key "M-x")
-;    )
-;   )
+  ;; Global general keybindings
+  (general-evil-setup)
+  (general-define-key
+   :prefix gjs-leader-key
+   :states '(normal motion)
+   ;; I want these everywhere
+   "a" '(gjstein-org-agenda :which-key "agenda")
+   "A" '(gjstein-org-weekly-agenda :which-key "weekly agenda")
+   "g" '(magit-status :which-key "git")
+   ;; org-mode keys
+   ;;"c" '(:ignore t :which-key "Org Keys")
+   "q" '(org-capture :which-key "Capture")
+   "l" '(gjstein-open-ledger :which-key "Ledger")
+   gjs-leader-key '(helm-M-x :which-key "M-x")
+   )
+  )
 
 ; (use-package navigate
 ;   :ensure t
-;   :after evil
 ;   :config
 ;   ;; Ensure that these shortcuts will also work in motion state
 ;   (define-key evil-motion-state-map
@@ -141,98 +139,98 @@
 ;   )
 
 
-; ;; == Helm Mode ==
-; (use-package helm
-;   :ensure t
-;   :diminish helm-mode
-;   :init
+;; == Helm Mode ==
+(use-package helm
+  :ensure t
+  :diminish helm-mode
+  :init
 
-;   ;; Changes the helm prefix key
-;   (global-set-key (kbd "C-c h") 'helm-command-prefix)
-;   (global-unset-key (kbd "C-x c"))
+  ;; Changes the helm prefix key
+  (global-set-key (kbd "C-c h") 'helm-command-prefix)
+  (global-unset-key (kbd "C-x c"))
 
-;   ;; Supress warning
-;   (setq ad-redefinition-action 'accept)
+  ;; Supress warning
+  (setq ad-redefinition-action 'accept)
 
-;   :config
-;   (require 'helm)
-;   (require 'helm-files)
-;   (require 'helm-config) ; Necessary for helm-mode
+  :config
+  (require 'helm)
+  (require 'helm-files)
+  (require 'helm-config) ; Necessary for helm-mode
   
-;   ;; Additional key bindings
-;   (bind-key "<tab>" 'helm-execute-persistent-action helm-map)
-;   (bind-key [escape] 'helm-keyboard-quit helm-map)
-;   (bind-key "C-l" (kbd "RET") helm-map)
+  ;; Additional key bindings
+  (bind-key "<tab>" 'helm-execute-persistent-action helm-map)
+  (bind-key [escape] 'helm-keyboard-quit helm-map)
+  (bind-key "C-l" (kbd "RET") helm-map)
 
-;   (setq helm-split-window-in-side-p           t
-; 	helm-move-to-line-cycle-in-source     t
-; 	helm-ff-search-library-in-sexp        t
-; 	helm-scroll-amount                    8
-; 	helm-M-x-fuzzy-match                  t
-; 	helm-ff-file-name-history-use-recentf t)
+  (setq helm-split-window-in-side-p           t
+	helm-move-to-line-cycle-in-source     t
+	helm-ff-search-library-in-sexp        t
+	helm-scroll-amount                    8
+	helm-M-x-fuzzy-match                  t
+	helm-ff-file-name-history-use-recentf t)
 
-;   (if (string-equal system-type "darwin")
-;       ;; This requires the 'ggrep' command to be installed for OSX
-;       (setq helm-grep-default-command
-; 	    "ggrep --color=always -d skip %e -n%cH -e %p %f"
-; 	    helm-grep-default-recurse-command
-; 	    "ggrep --color=always -d recurse %e -n%cH -e %p %f"))
-;   (if (string-equal system-type "gnu/linux")
-;       (setq helm-grep-default-command
-; 	    "grep --color=always -d skip %e -n%cH -e %p %f"
-; 	    helm-grep-default-recurse-command
-; 	    "grep --color=always -d recurse %e -n%cH -e %p %f"))
+  (if (string-equal system-type "darwin")
+      ;; This requires the 'ggrep' command to be installed for OSX
+      (setq helm-grep-default-command
+	    "ggrep --color=always -d skip %e -n%cH -e %p %f"
+	    helm-grep-default-recurse-command
+	    "ggrep --color=always -d recurse %e -n%cH -e %p %f"))
+  (if (string-equal system-type "gnu/linux")
+      (setq helm-grep-default-command
+	    "grep --color=always -d skip %e -n%cH -e %p %f"
+	    helm-grep-default-recurse-command
+	    "grep --color=always -d recurse %e -n%cH -e %p %f"))
 
-;   (helm-mode 1)
+  (helm-mode 1)
 
-;   (defun spacemacs//hide-cursor-in-helm-buffer ()
-;     "Hide the cursor in helm buffers."
-;     (with-helm-buffer
-;       (setq cursor-in-non-selected-windows nil)))
-;   (add-hook 'helm-after-initialize-hook 'spacemacs//hide-cursor-in-helm-buffer)
+  (defun spacemacs//hide-cursor-in-helm-buffer ()
+    "Hide the cursor in helm buffers."
+    (with-helm-buffer
+      (setq cursor-in-non-selected-windows nil)))
+  (add-hook 'helm-after-initialize-hook 'spacemacs//hide-cursor-in-helm-buffer)
   
-;   :bind (("C-x b" . helm-mini)
-; 	 ("C-x C-f" . helm-find-files)
-; 	 ("M-x" . helm-M-x)
-; 	 :map helm-map
-; 	 ("C-i" . helm-execute-persistent-action)
-; 	 ("C-z" . helm-select-action)
-; 	 ("C-j" . helm-next-line)
-; 	 ("C-k" . helm-previous-line)
-; 	 ("C-h" . helm-next-source)
-; 	 ("C-S-h" . describe-key)
-; 	 ("C-e" . hydra-helm-menu/body)
-; 	 :map helm-find-files-map
-; 	 ("C-l" . helm-execute-persistent-action)
-; 	 ("C-h" . helm-find-files-up-one-level)
-; 	 :map helm-read-file-map
-; 	 ("C-l" . helm-execute-persistent-action)
-; 	 ("C-h" . helm-find-files-up-one-level)
-; 	 )
-;   )
+  :bind (("C-x b" . helm-mini)
+	 ("C-x C-f" . helm-find-files)
+	 ("M-x" . helm-M-x)
+	 :map helm-map
+	 ("C-i" . helm-execute-persistent-action)
+	 ("C-z" . helm-select-action)
+	 ("C-j" . helm-next-line)
+	 ("C-k" . helm-previous-line)
+	 ("C-h" . helm-next-source)
+	 ("C-S-h" . describe-key)
+	 ("C-e" . hydra-helm-menu/body)
+	 :map helm-find-files-map
+	 ("C-l" . helm-execute-persistent-action)
+	 ("C-h" . helm-find-files-up-one-level)
+	 :map helm-read-file-map
+	 ("C-l" . helm-execute-persistent-action)
+	 ("C-h" . helm-find-files-up-one-level)
+	 )
+  )
 
-; (use-package swiper :ensure t)
-; (use-package swiper-helm
-;   :ensure t
-;   :after helm
-;   :init
-;   (general-define-key
-;    :prefix gjs-leader-key
-;    :states '(normal motion)
-;    "/" 'swiper-helm)
-;   )
-; (general-define-key
-;  :keymaps 'swiper-map
-;  :states '(normal motion)
-;  [escape] 'keyboard-escape-quit
-;  )					;
+(use-package swiper :ensure t)
+(use-package swiper-helm
+  :ensure t
+  :after helm
+  :init
+  (general-define-key
+   :prefix gjs-leader-key
+   :states '(normal motion)
+   "/" 'swiper-helm)
+  )
+(general-define-key
+ :keymaps 'swiper-map
+ :states '(normal motion)
+ [escape] 'keyboard-escape-quit
+ )					;
 
-; (use-package which-key
-;   :ensure t
-;   :init
-;   (which-key-mode)
-;   (setq which-key-idle-delay 0.2)
-;   :diminish which-key-mode
-;   )
+(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode)
+  (setq which-key-idle-delay 0.2)
+  :diminish which-key-mode
+  )
 
 ;;; init-20-nav-interface.el ends here

@@ -16,7 +16,8 @@ int main() {
   // characters 'foo' here:
 
   // foo
-  
+  foobar = 10;
+  foo
   // Upon running this, a new buffer should open which shows both 'foobar' and
   // 'foobar_d' as options. In addition, running the command 'company-irony'
   // will rely on 'company' to show the completion in place (try it and
@@ -29,6 +30,7 @@ int main() {
 
   // Now we can define a class object from the imported 'rect' class.
   rect square = rect();
+
   // Not only will the object 'square' complete from 'squ', but once it's
   // completed, running 'company-complete' after 'square.' (notice the period)
   // will load the properties as well. Notice that some of the options are shown
@@ -38,6 +40,6 @@ int main() {
   // squ
   // square.
 
-
+  height
   return 0;
 }

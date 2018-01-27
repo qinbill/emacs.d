@@ -21,29 +21,27 @@
 
 ;; === Code Completion ===
 
-; ;; == company-mode ==
-; (use-package company
-;   :ensure t
-;   :defer t
-;   :after
-;   :diminish company-mode
-;   :init (add-hook 'after-init-hook 'global-company-mode)
-;   (general-define-key
-;    :keymaps 'company-active-map
-;    "C-j" 'company-select-next
-;    "C-k" 'company-select-previous
-;    "C-l" 'company-complete-selection)
+;; == company-mode ==
+(use-package company
+  :ensure t
+  :defer t
+  :diminish company-mode
+  :init (add-hook 'after-init-hook 'global-company-mode)
+  (general-define-key
+   :keymaps 'company-active-map
+   "C-j" 'company-select-next
+   "C-k" 'company-select-previous
+   "C-l" 'company-complete-selection)
 
-;   :config
-;   (use-package company-irony :ensure t :defer t)
-;   (setq company-idle-delay              nil
-; 	company-minimum-prefix-length   2
-; 	company-show-numbers            t
-; 	company-tooltip-limit           20
-; 	company-dabbrev-downcase        nil
-; 	)
-;   (define-key evil-insert-state-map (kbd "C-f") 'company-complete-common)
-;   )
+  :config
+  (use-package company-irony :ensure t :defer t)
+  (setq company-idle-delay              nil
+	company-minimum-prefix-length   2
+	company-show-numbers            t
+	company-tooltip-limit           20
+	company-dabbrev-downcase        nil
+	)
+  )
 
 ;; === Tools ===
 
@@ -77,7 +75,7 @@
     :config
     (helm-projectile-on)
     (general-define-key
-;     :prefix gjs-leader-key
+     :prefix gjs-leader-key
      :states '(normal motion)
      ;; Ensure (leader p) maps to the projectile bindings
      "p" '(:keymap projectile-command-map :which-key "Projectile")
@@ -137,19 +135,6 @@
   (setq magit-diff-refine-hunk 'all)
   ;; Use evil keybindings within magit
   :config
-  (use-package evil-magit
-    :ensure t
-    :config
-    ;; Default commit editor opening in insert mode
-    (add-hook 'with-editor-mode-hook 'evil-insert-state)
-    (evil-define-key 'normal with-editor-mode-map
-      (kbd "RET") 'with-editor-finish
-      [escape] 'with-editor-cancel
-      )
-    (evil-define-key 'normal git-rebase-mode-map
-      "l" 'git-rebase-show-commit
-      )
-    )
   )
 
 ;; == flycheck ==

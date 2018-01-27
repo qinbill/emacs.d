@@ -69,14 +69,14 @@
   (general-define-key
    :keymaps 'org-capture-mode-map
    :states '(normal motion)
-;;   :prefix gjs-leader-key
+   :prefix gjs-leader-key
    "c" 'org-capture-finalize
    "k" 'org-capture-kill
    "w" 'org-capture-refile
    )
 
   ;; Evil key configurations (agenda)
-  (evil-set-initial-state 'org-agenda-mode 'normal)
+  ;;  (evil-set-initial-state 'org-agenda-mode 'normal)
   (defvar org-agenda-mode-map)
   (general-define-key
    :keymaps 'org-agenda-mode-map
@@ -102,7 +102,7 @@
    )
   (general-define-key
    :keymaps 'org-agenda-mode-map
-;   :prefix (concatenate 'string gjs-leader-key)
+   :prefix (concatenate 'string gjs-leader-key)
    :states '(normal motion)
    "" '(:ignore t :which-key "Agenda")
    "i" 'org-agenda-clock-in
@@ -135,7 +135,7 @@
   ;;  (kbd "<C-return>") 'gs-org-insert-heading-respect-content
   ;;  )
   (general-define-key
- ;  :prefix (concatenate 'string gjs-leader-key)
+   :prefix (concatenate 'string gjs-leader-key)
    :keymaps 'org-mode-map
    :states '(normal motion)
    "i" '(org-clock-in :which-key "clock in")

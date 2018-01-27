@@ -42,24 +42,24 @@
 
 (set-face-attribute 'default nil :height 200)
 
-;; Solarized
+; Solarized
 ; (use-package color-theme :ensure t)
-; (use-package color-theme-solarized
-;   :ensure t
-;   :init
-;   (set-frame-parameter nil 'background-mode 'dark)
-;   ; (load-theme 'solarized t)
-;   (defun gjstein-swap-theme-light-dark ()
-;     "Swaps between solarized light and dark"
-;     (interactive)
-;     (load-theme 'solarized)
-;     (if (eq 'light (frame-parameter nil 'background-mode))
-; 	(set-frame-parameter nil 'background-mode 'dark)
-;       (set-frame-parameter nil 'background-mode 'light)
-;       )
-;     (enable-theme 'solarized)
-;     )
-;   )
+(use-package solarized-theme
+  :ensure t
+  :init
+  (set-frame-parameter nil 'background-mode 'dark)
+  ; (load-theme 'solarized t)
+  (defun gjstein-swap-theme-light-dark ()
+    "Swaps between solarized light and dark"
+    (interactive)
+    (load-theme 'solarized)
+    (if (eq 'light (frame-parameter nil 'background-mode))
+	(set-frame-parameter nil 'background-mode 'dark)
+      (set-frame-parameter nil 'background-mode 'light)
+      )
+    (enable-theme 'solarized)
+    )
+  )
 
 ; I prefer using a smaller font size than the default (and 'Monaco')
 ; (if (eq system-type 'darwin)
@@ -85,12 +85,12 @@
 ;; initial window
 (setq initial-frame-alist
       '((width . 102)   ; characters in a line
-        (height . 80))) ; number of lines
+        (height . 60))) ; number of lines
 
 ;; sebsequent frame
 (setq default-frame-alist
       '((width . 100)   ; characters in a line
-        (height . 80))) ; number of lines
+        (height . 60))) ; number of lines
 
 ;; Diminish extraneous info in the modeline
 (diminish 'abbrev-mode)
@@ -202,9 +202,6 @@
 (rename-major-mode "shell" shell-mode "σ")
 (rename-major-mode "org" org-mode "ω")
 (rename-major-mode "Web" web-mode "w")
-
-
-
 
 (add-hook 'web-mode-hook (lambda() (setq mode-name "w")))
 (add-hook 'emacs-lisp-mode-hook (lambda() (setq mode-name "ελ")))

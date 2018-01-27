@@ -23,25 +23,25 @@
 ;; === Project Navigation ===
 
 ;; == gtags && helm-gtags ==
-;; (use-package helm-gtags
-;;   :ensure t
-;;   :defer t
+(use-package helm-gtags
+  :ensure t
+  :defer t
 
-;;   :init
-;;   ;; Enable helm-gtags-mode
-;;   (add-hook 'dired-mode-hook 'helm-gtags-mode)
-;;   (add-hook 'eshell-mode-hook 'helm-gtags-mode)
-;;   (add-hook 'c-mode-hook 'helm-gtags-mode)
-;;   (add-hook 'c++-mode-hook 'helm-gtags-mode)
-;;   (add-hook 'asm-mode-hook 'helm-gtags-mode)
-;;   :config
-;;   (bind-key "C-c g a" 'helm-gtags-tags-in-this-function helm-gtags-mode-map)
-;;   (bind-key "C-j" 'helm-gtags-select helm-gtags-mode-map)
-;;   (bind-key "M-." 'helm-gtags-dwim helm-gtags-mode-map)
-;;   (bind-key "M-," 'helm-gtags-pop-stack helm-gtags-mode-map)
-;;   (bind-key "C-c <" 'helm-gtags-previous-history helm-gtags-mode-map)
-;;   (bind-key "C-c >" 'helm-gtags-next-history helm-gtags-mode-map)
-;;   )
+  :init
+  ;; Enable helm-gtags-mode
+  (add-hook 'dired-mode-hook 'helm-gtags-mode)
+  (add-hook 'eshell-mode-hook 'helm-gtags-mode)
+  (add-hook 'c-mode-hook 'helm-gtags-mode)
+  (add-hook 'c++-mode-hook 'helm-gtags-mode)
+  (add-hook 'asm-mode-hook 'helm-gtags-mode)
+  :config
+  (bind-key "C-c g a" 'helm-gtags-tags-in-this-function helm-gtags-mode-map)
+  (bind-key "C-j" 'helm-gtags-select helm-gtags-mode-map)
+  (bind-key "M-." 'helm-gtags-dwim helm-gtags-mode-map)
+  (bind-key "M-," 'helm-gtags-pop-stack helm-gtags-mode-map)
+  (bind-key "C-c <" 'helm-gtags-previous-history helm-gtags-mode-map)
+  (bind-key "C-c >" 'helm-gtags-next-history helm-gtags-mode-map)
+  )
 
 ;; === Code Completion ===
 

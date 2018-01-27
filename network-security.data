@@ -1,3 +1,4 @@
 (
+ (:id "sha1:127e8467e8a0220b42e4abd7cb5a92a37a574a1b" :fingerprint "sha1:2e:40:92:33:bf:a0:3f:0c:50:46:bb:be:41:7b:9b:11:4f:54:e7:23" :host "smtp.staffmail.ed.ac.uk:587" :conditions (:insecure :unknown-ca :invalid))
  (:id "sha1:85457c729378cc93c732b6a3941c8e4f9c2e60f3" :fingerprint "sha1:ab:a6:d7:6a:b3:d3:63:fa:19:0d:65:41:60:23:6e:ef:d3:2a:46:dc" :host "marmalade-repo.org:443" :conditions (:insecure :unknown-ca :invalid))
 )

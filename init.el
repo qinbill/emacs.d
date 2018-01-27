@@ -93,5 +93,30 @@
 ;; === misc ===
 (load-file "~/.emacs.d/config/init-70-misc-ledger.el")
 
+;; === mail ===
+(load-file "~/.emacs.d/config/init-80-mail.el")
+
+
 (setq ispell-program-name "aspell")
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(flycheck-c/c++-googlelint-executable "~/.emacs.d/scripts/cpplint.py")
+ '(flycheck-google-cpplint-filter "-whitespace,+whitespace/braces")
+ '(flycheck-google-cpplint-linelength "120")
+ '(flycheck-google-cpplint-verbose "3")
+ '(package-selected-packages
+   (quote
+    (company-irony evil-magit zenburn-theme yaml-mode ws-butler which-key web-mode use-package swiper-helm swift-mode spacemacs-theme spaceline solarized-theme rust-mode navigate monokai-theme matlab-mode markdown-mode magit ledger-mode irony helm-projectile helm-gtags helm-ag haskell-mode google-c-style general flycheck-rust exec-path-from-shell evil-vimish-fold evil-surround evil-snipe emmet-mode elpy diminish color-theme-solarized color-theme-sanityinc-solarized color-theme-dg cmake-mode base16-theme auctex ag)))
+ '(send-mail-function (quote smtpmail-send-it))
+ '(smtpmail-smtp-server "smtp.staffmail.ed.ac.uk")
+ '(smtpmail-smtp-service 587))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

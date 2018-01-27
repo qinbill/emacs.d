@@ -29,12 +29,12 @@
   (general-define-key
    :keymaps 'ledger-mode-map
    :states '(normal motion)
-;   :prefix (concat gjs-leader-key "c")
+   :prefix (concat gjs-leader-key "c")
    "r" 'ledger-report
    "R" 'ledger-report-redo
    )
 
-  (evil-set-initial-state 'ledger-report-mode 'motion)
+;;  (evil-set-initial-state 'ledger-report-mode 'motion)
   (general-define-key
    :keymaps 'ledger-report-mode-map
    :states '(normal motion)
