@@ -99,6 +99,7 @@
 
 (setq ispell-program-name "aspell")
 
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -110,10 +111,13 @@
  '(flycheck-google-cpplint-verbose "3")
  '(package-selected-packages
    (quote
-    (company-irony evil-magit zenburn-theme yaml-mode ws-butler which-key web-mode use-package swiper-helm swift-mode spacemacs-theme spaceline solarized-theme rust-mode navigate monokai-theme matlab-mode markdown-mode magit ledger-mode irony helm-projectile helm-gtags helm-ag haskell-mode google-c-style general flycheck-rust exec-path-from-shell evil-vimish-fold evil-surround evil-snipe emmet-mode elpy diminish color-theme-solarized color-theme-sanityinc-solarized color-theme-dg cmake-mode base16-theme auctex ag)))
+    (hc-zenburn-theme nzenburn-theme zenburn solarized-theme zenburn-theme yaml-mode ws-butler which-key web-mode use-package swiper-helm swift-mode spacemacs-theme spaceline rust-mode navigate monokai-theme matlab-mode markdown-mode ledger-mode helm-projectile helm-gtags helm-ag haskell-mode google-c-style general flycheck-rust exec-path-from-shell evil-vimish-fold evil-surround evil-snipe evil-magit emmet-mode elpy diminish deep-thought-theme company-irony color-theme-solarized color-theme-sanityinc-solarized color-theme-dg color-theme-cobalt cmake-mode base16-theme auctex ag)))
+ '(safe-local-variable-values (quote ((Tex-PDF-mode . t))))
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtp.staffmail.ed.ac.uk")
- '(smtpmail-smtp-service 587))
+ '(smtpmail-smtp-service 587)
+ '(weechat-color-list
+   (unspecified "#272822" "#3C3D37" "#F70057" "#F92672" "#86C30D" "#A6E22E" "#BEB244" "#E6DB74" "#40CAE4" "#66D9EF" "#FB35EA" "#FD5FF0" "#74DBCD" "#A1EFE4" "#F8F8F2" "#F8F8F0")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

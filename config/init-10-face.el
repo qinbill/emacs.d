@@ -23,43 +23,77 @@
 
 ;; == Load Custom Theme ==
 
-;;; Cyberpunk
-(use-package monokai-theme
+; ;;; Cyberpunk
+; (use-package monokai-theme
+;   :ensure t
+;   :config
+;   (setq monokai-height-minus-1 1.0
+; 	monokai-height-plus-1 1.0
+; 	monokai-height-plus-2 1.0
+; 	monokai-height-plus-3 1.0
+; 	monokai-height-plus-4 1.0
+;   )
+;   (load-theme 'monokai t)
+; ;;  (add-hook 'after-make-frame-functions
+; ;;	    (lambda (frame)
+; ;;	      (if (display-graphic-p)
+; ;;		  nil
+; ;;		(load-theme 'monokai))))
+;   )
+
+(set-face-attribute 'default nil :height 180)
+
+
+(defvar zenburn-override-colors-alist
+  '(("zenburn-bg+05" . "#181818")
+    ("zenburn-bg+1"  . "#1F1F1F")
+    ("zenburn-bg+2"  . "#2F2F2F")
+    ("zenburn-bg+3"  . "#3F3F3F")))
+
+(use-package zenburn-theme 
   :ensure t
-  :config
-  (setq monokai-height-minus-1 1.0
-	monokai-height-plus-1 1.0
-	monokai-height-plus-2 1.0
-	monokai-height-plus-3 1.0
-	monokai-height-plus-4 1.0)
-  (load-theme 'monokai t)
-;;  (add-hook 'after-make-frame-functions
-;;	    (lambda (frame)
-;;	      (if (display-graphic-p)
-;;		  nil
-;;		(load-theme 'monokai))))
   )
 
-(set-face-attribute 'default nil :height 200)
+;;(use-package hc-zenburn-theme :ensure t)
 
-; Solarized
-; (use-package color-theme :ensure t)
-(use-package solarized-theme
-  :ensure t
-  :init
-  (set-frame-parameter nil 'background-mode 'dark)
-  ; (load-theme 'solarized t)
-  (defun gjstein-swap-theme-light-dark ()
-    "Swaps between solarized light and dark"
-    (interactive)
-    (load-theme 'solarized)
-    (if (eq 'light (frame-parameter nil 'background-mode))
-	(set-frame-parameter nil 'background-mode 'dark)
-      (set-frame-parameter nil 'background-mode 'light)
-      )
-    (enable-theme 'solarized)
-    )
-  )
+
+
+
+; ; Solarized
+; ; (use-package color-theme :ensure t)
+; (use-package solarized-theme
+;   :ensure t
+;   :init
+;   (set-frame-parameter nil 'background-mode 'dark)
+
+;   ;; make the fringe stand out from the background
+;   (setq solarized-distinct-fringe-background t)
+
+;   ;; Don't change the font for some headings and titles
+;   (setq solarized-use-variable-pitch nil)
+
+;   ;; make the modeline high contrast
+;   (setq solarized-high-contrast-mode-line t)
+
+;   ;; Use less bolding
+;   (setq solarized-use-less-bold t)
+
+;   ;; Use more italics
+;   (setq solarized-use-more-italic t)
+
+;   ;; Use less colors for indicators such as git:gutter, flycheck and similar
+;   (setq solarized-emphasize-indicators nil)
+
+;   ;; Don't change size of org-mode headlines (but keep other size-changes)
+;   (setq solarized-scale-org-headlines nil)
+
+;   ;; Avoid all font-size changes
+;   (setq solarized-height-minus-1 1.0)
+;   (setq solarized-height-plus-1 1.0)
+;   (setq solarized-height-plus-2 1.0)
+;   (setq solarized-height-plus-3 1.0)
+;   (setq solarized-height-plus-4 1.0)
+;   )
 
 ; I prefer using a smaller font size than the default (and 'Monaco')
 ; (if (eq system-type 'darwin)
@@ -84,13 +118,13 @@
 
 ;; initial window
 (setq initial-frame-alist
-      '((width . 102)   ; characters in a line
-        (height . 60))) ; number of lines
+      '((width . 172)   ; characters in a line
+        (height . 55))) ; number of lines
 
 ;; sebsequent frame
 (setq default-frame-alist
-      '((width . 100)   ; characters in a line
-        (height . 60))) ; number of lines
+      '((width . 170)   ; characters in a line
+        (height . 55))) ; number of lines
 
 ;; Diminish extraneous info in the modeline
 (diminish 'abbrev-mode)
