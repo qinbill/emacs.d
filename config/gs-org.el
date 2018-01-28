@@ -3,10 +3,15 @@
 
 ;;; Code:
 ;; Some general settings
-(setq org-directory "~/org")
-(setq org-default-notes-file "~/org/refile.org")
-(defvar org-default-diary-file "~/org/diary.org")
-(setq org-agenda-files (quote ("~/org")))
+(setq org-directory "~/Dropbox/org")
+(setq org-default-notes-file "~/Dropbox/org/refile.org")
+(defvar org-default-diary-file "~/Dropbox/org/diary.org")
+(setq org-agenda-files (quote ("~/Dropbox/org")))
+
+; (setq org-agenda-files (list "~/Dropbox/org/work.org"
+;                              "~/Dropbox/org/school.org" 
+;                              "~/Dropbox/org/home.org"))
+
 
 ;; Display properties
 (setq org-cycle-separator-lines 0)

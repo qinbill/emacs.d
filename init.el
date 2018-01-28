@@ -96,9 +96,13 @@
 ;; === mail ===
 (load-file "~/.emacs.d/config/init-80-mail.el")
 
+;; === Org ===
+(load-file "~/.emacs.d/config/gs-org.el")
+
+
 
 (setq ispell-program-name "aspell")
-
+(global-auto-revert-mode t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
