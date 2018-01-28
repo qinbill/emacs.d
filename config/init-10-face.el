@@ -34,25 +34,51 @@
 ; 	monokai-height-plus-4 1.0
 ;   )
 ;   (load-theme 'monokai t)
-; ;;  (add-hook 'after-make-frame-functions
-; ;;	    (lambda (frame)
-; ;;	      (if (display-graphic-p)
-; ;;		  nil
-; ;;		(load-theme 'monokai))))
+;  ; (add-hook 'after-make-frame-functions
+; 	;     (lambda (frame)
+; 	;       (if (display-graphic-p)
+; 	; 	  nil
+; 	; 	(load-theme 'monokai))))
 ;   )
 
 (set-face-attribute 'default nil :height 180)
 
 
-(defvar zenburn-override-colors-alist
-  '(("zenburn-bg+05" . "#181818")
-    ("zenburn-bg+1"  . "#1F1F1F")
-    ("zenburn-bg+2"  . "#2F2F2F")
-    ("zenburn-bg+3"  . "#3F3F3F")))
+; (defvar zenburn-override-colors-alist
+;   '(("zenburn-bg"    . "#000000")
+;     ("zenburn-bg+05" . "#000000")
+;     ("zenburn-bg+1"  . "#000000")
+;     ("zenburn-bg+2"  . "#000000")
+;     ("zenburn-bg+3"  . "#000000")
+;     ("zenburn-bg-2"     . "#000000")
+;     ("zenburn-bg-1"     . "#000000")
+;     ))
+; (use-package zenburn-theme 
+;   :ensure t
+;   )
 
-(use-package zenburn-theme 
-  :ensure t
-  )
+; (with-eval-after-load "zenburn-theme"
+;   (zenburn-with-color-variables
+;     (custom-theme-set-faces
+;      'zenburn
+;      ;; original `(default ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
+;      `(default ((t (:foreground ,zenburn-fg :background ,zenburn-bg-1)))))))
+
+
+(use-package color-theme-sanityinc-tomorrow :ensure t)
+(require 'color-theme-sanityinc-tomorrow)
+
+;; (load-theme color-theme-sanityinc-tomorrow)
+
+
+
+; (defvar zenburn-override-colors-alist
+;   '(("zenburn-bg"    . "#000000")
+;     ("zenburn-bg+05" . "#000000")
+;     ("zenburn-bg+1"  . "#000000")
+;     ("zenburn-bg+2"  . "#000000")
+;     ("zenburn-bg+3"  . "#000000")))
+; (load-theme 'zenburn t)
 
 ;;(use-package hc-zenburn-theme :ensure t)
 
