@@ -97,7 +97,7 @@
 (load-file "~/.emacs.d/config/init-80-mail.el")
 
 ;; === Org ===
-(load-file "~/.emacs.d/config/gs-org.el")
+(load-file "~/.emacs.d/config/init-90-org.el")
 
 
 
@@ -126,7 +126,7 @@
  '(flycheck-google-cpplint-verbose "3")
  '(package-selected-packages
    (quote
-    (color-theme-sanityinc-tomorrow hc-zenburn-theme nzenburn-theme zenburn solarized-theme zenburn-theme yaml-mode ws-butler which-key web-mode use-package swiper-helm swift-mode spacemacs-theme spaceline rust-mode navigate monokai-theme matlab-mode markdown-mode ledger-mode helm-projectile helm-gtags helm-ag haskell-mode google-c-style general flycheck-rust exec-path-from-shell evil-vimish-fold evil-surround evil-snipe evil-magit emmet-mode elpy diminish deep-thought-theme company-irony color-theme-solarized color-theme-sanityinc-solarized color-theme-dg color-theme-cobalt cmake-mode base16-theme auctex ag)))
+    (org-pomodoro color-theme-sanityinc-tomorrow hc-zenburn-theme nzenburn-theme zenburn solarized-theme zenburn-theme yaml-mode ws-butler which-key web-mode use-package swiper-helm swift-mode spacemacs-theme spaceline rust-mode navigate monokai-theme matlab-mode markdown-mode ledger-mode helm-projectile helm-gtags helm-ag haskell-mode google-c-style general flycheck-rust exec-path-from-shell evil-vimish-fold evil-surround evil-snipe evil-magit emmet-mode elpy diminish deep-thought-theme company-irony color-theme-solarized color-theme-sanityinc-solarized color-theme-dg color-theme-cobalt cmake-mode base16-theme auctex ag)))
  '(safe-local-variable-values (quote ((Tex-PDF-mode . t))))
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtp.staffmail.ed.ac.uk")
